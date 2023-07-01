@@ -4,7 +4,6 @@ import {
   useSessionContext,
   User,
 } from "@supabase/auth-helpers-react";
-
 import { UserDetails, Subscription } from "@/types";
 
 type UserContextType = {
@@ -61,6 +60,7 @@ export const MyUserContextProvider = (props: Props) => {
         }
       );
     } else if (!user && !isLoadingUser && !isLoadingData) {
+      setIsloadingData(false);
       setUserDetails(null);
       setSubscription(null);
     }
